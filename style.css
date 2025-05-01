@@ -1,95 +1,135 @@
 body {
-    display: grid;
-    grid-template-rows: 10% 90%;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    background-color: var(--bg);
-    color: var(--text);
-    transition: 0.3s;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+.light {
+  --bg: #ffffff;
+  --text: #000000;
+  --btn: #dddddd;
+  --calc-bg: #f3f3f3;
+  --btn-text: #000000;
+}
+
+.dark {
+  --bg: #121212;
+  --text: #ffffff;
+  --btn: #333333;
+  --calc-bg: #1e1e1e;
+  --btn-text: #ffffff;
+}
+
+header {
+  padding: 10px;
+}
+
+header h1 {
+  display: inline-block;
+}
+
+header button {
+  float: right;
+  margin-left: 10px;
+}
+
+.calculator {
+  background-color: var(--calc-bg);
+  width: 90%;
+  height: 100%;
+  max-width: 800px;
+  padding: 1rem;
+  border-radius: 10px;
+  margin: auto;
+  transition: background-color 0.3s ease;
+}
+
+.display {
+  font-size: 2em;
+  padding: 20px;
+  background: var(--btn);
+  margin: 10px 0;
+  border-radius: 8px;
+  min-height: 50px;
+  color: var(--text);
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--btn);
+  color: var(--btn-text);
+  transition: transform 0.1s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 5px #888;
+}
+
+footer {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 25%;
+  padding: 10px;
+  background: var(--btn);
+  color: var(--text);
+  overflow-y: auto;
+}
+
+footer h3 {
+  float: left;
+}
+
+footer button {
+  float: right;
+}
+
+.Delete {
+  background-color: rgb(231, 115, 115);
+}
+
+main {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  gap: 5px;
+}
+
+@media (max-width: 768px) {
+  body {
+    grid-template-rows: auto auto;
+  }
+
+  footer {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .calculator {
-    background-color: red;
-    width: 70%;
-    padding: 1%;
-    border-radius: 10px;
-    margin-left: 27.5%;
+    width: 95%;
   }
 
-  header h1 {
-    float: left;
-  }
-
-  header button {
-    float: right;
-  }
-  
-  .light {
-    --bg: #ffffff;
-    --text: #000000;
-    --btn: #dddddd;
-  }
-  
-  .dark {
-    --bg: #121212;
-    --text: #ffffff;
-    --btn: #333333;
-  }
-  
-  footer {
-    display: grid;
-    grid-template-rows: 5% 95%;
-    position: fixed;
-    height: 100%;
-    width: 25%;
-    float: left;
-    padding: 10px;
-    background: var(--btn);
-  }
-
-  footer h3 {
-    float: left;
-  }
-
-  footer button{
-    float: right;
-  }
-  
-  .display {
-    font-size: 2em;
-    padding: 20px;
-    background: var(--btn);
-    margin: 10px;
-    border-radius: 8px;
-    min-height: 50px;
-  }
-  
   .buttons {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin: 20px;
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  button {
-    padding: 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 8px;
-    background-color: var(--btn);
-    transition: transform 0.1s ease;
-  }
-  
-  button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 5px #888;
-  }
-  
-  @media (max-width: 600px) {
-    .buttons {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-  
+}

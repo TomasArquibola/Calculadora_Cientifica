@@ -67,3 +67,14 @@ document.getElementById("musicaBtn").onclick = () => {
 };
 
 mostrarHistorial();
+
+// Agrega sonido al hacer clic en cualquier botón
+document.querySelectorAll('button').forEach(boton => {
+  boton.addEventListener('click', () => {
+    const sonido = document.getElementById('clickSound');
+    if (sonido) {
+      sonido.currentTime = 0;
+      sonido.play().catch(err => console.warn("Error al reproducir el sonido:", err));
+    }
+  });
+});

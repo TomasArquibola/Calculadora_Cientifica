@@ -14,25 +14,25 @@
   </header>
 
   <main>
-    <footer>
+    <div>
+      <footer>
         <div>
-            <h3>Historial</h3>
-           <button onclick="borrarHistorial()">Borrar historial</button>
+          <h3>Historial</h3>
+          <button class="Delete" onclick="borrarHistorial()">Borrar Historial</button>
         </div>
         <div id="historial"></div>
-    </footer>
+      </footer>
+    </div>
 
     <div class="calculator">
         <div class="display" id="display">0</div>
         <div class="buttons">
-            <!-- Botones científicos -->
             <button onclick="operar('sin(')">sin</button>
             <button onclick="operar('cos(')">cos</button>
             <button onclick="operar('tan(')">tan</button>
             <button onclick="operar('log(')">log</button>
             <button onclick="operar('sqrt(')">√</button>
 
-            <!-- Botones básicos -->
             <button onclick="agregar('7')">7</button>
             <button onclick="agregar('8')">8</button>
             <button onclick="agregar('9')">9</button>
@@ -54,7 +54,7 @@
             <button onclick="agregar('+')">+</button>
 
             <button onclick="limpiar()">C</button>
-            <button onclick="borrar()">←</button>
+            <button class="Delete" onclick="borrar()">←</button>
         </div>
     </div>
   </main>
